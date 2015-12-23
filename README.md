@@ -1,4 +1,4 @@
-## Mark Sadegi's Dotfiles
+## Marka2g's Dotfiles
 
 Currently patterned off of [mislav's dotfiles](https://github.com/mislav/dotfiles).
 
