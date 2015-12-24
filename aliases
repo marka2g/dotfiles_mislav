@@ -1,0 +1,18 @@
+# general
+alias l="ls -lah"
+alias ll="ls -la"
+alias la='ls -A'
+
+# git
+alias ga="git add"
+alias gpl="git pull"
+alias gp="git push"
+alias gs="git status"
+alias gl="git log"
+alias gd="git diff"
+alias gc="git commit -v"
+alias gcm="git commit -m"
+alias gca="git commit -v -a"
+alias gb="git branch -v"
+alias st="git status -sb"
+alias gco="git checkout"

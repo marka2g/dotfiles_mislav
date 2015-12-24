@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -e
+
+port=4000
+
+dir="$(cd "${1:-$PWD}" && pwd)"
+brew="$(brew --prefix)"
+
+logdir="$brew/var/log/nginx"
+mkdir -p "$logdir"
+
+# seems like there's no other way for having a dynamic config:
+echo "daemon off;
+error_log  $logdir/error_log;
+pid        /tmp/nginx-dir.pid;
+
+events { worker_connections 1024; }
+
+http {
+  types {
+    text/html               html htm shtml;
+    application/javascript  js;
+  }
+  charset     utf-8;
+
+  access_log  $logdir/access_log;
+
+  # client_body_temp_path /tmp/nginx-dir/client_body_temp;
+  # fastcgi_temp_path     /tmp/nginx-dir/client_body_temp;
+  # proxy_temp_path       /tmp/nginx-dir/proxy_temp;
+
+  server {
+    listen $port; server_name localhost;
+    root $dir;
+
+    location / {
+      autoindex   on;
+      expires     0;
+      add_header  Cache-Control private;
+    }
+  }
+}" > /tmp/nginx-dir.conf
+
+exec "$brew/sbin/nginx" -c /tmp/nginx-dir.conf

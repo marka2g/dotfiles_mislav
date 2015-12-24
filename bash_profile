@@ -3,6 +3,14 @@ if [ -r ~/.profile ]; then
   source ~/.profile
 fi
 
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+
+if [ -f ~/.general_aliases ]; then
+   source ~/.general_aliases
+fi
+
 export CLICOLOR=1
 export HISTCONTROL=ignoredups
 export EDITOR=vim
