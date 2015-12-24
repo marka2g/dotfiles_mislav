@@ -6,4 +6,4 @@ Adapted from [mislav's dotfiles](https://github.com/mislav/dotfiles). Although I
 #### This installation is particular to my own setup and tastes.  Feel free to clone, tweak and install according to your own.
 
 1. https://github.com/marka2g/dotfiles ~/dotfiles
-2. ~/Dropbox/Projects/vim/dotfiles/marka2g/dotfiles/install
+2. ~/CLONED REPO PATH/dotfiles/install
